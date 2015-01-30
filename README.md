@@ -1,3 +1,7 @@
+I will add chinese comments to this code
+我会尽可能多的为goagent源码添加中文注释，纯粹为了python的个人学习，别无他意，请勿查水表。
+有问题请联系lishuai0214@gmail.com
+
 goagent 3.2.3 [http://git.io/goa](https://nodeload.github.com/goagent/goagent/legacy.zip/3.0)
 
 ## Issues
