@@ -26,7 +26,7 @@ mimetypes._winreg = None
 
 # urllib2 是python标准库中的 HTTP 客户端库
 import urllib2
-#fancy_urllib google_appengine.zip中的库
+#fancy_urllib 是 google_appengine.zip中的库
 import fancy_urllib
 fancy_urllib.FancyHTTPSHandler = urllib2.HTTPSHandler
 
@@ -74,7 +74,7 @@ def upload(dirname, appid):
 #主函数
 def main():
     appids = raw_input('APPID:')
-    if not re.match(r'[0-9a-zA-Z\-|]+', appids):
+    if not re.match(r'[0-9a-zA-Z\-|]+', appids):#appid只支持数字0~9，小写字母a~z，大写字母A-Z以及-和分隔符|（不支持常用的下划线_？）
         println(u'错误的 appid 格式，请登录 http://appengine.google.com 查看您的 appid!')
         sys.exit(-1)
     if any(x in appids.lower() for x in ('ios', 'android', 'mobile')):
@@ -82,13 +82,13 @@ def main():
         sys.exit(-1)
     os.chdir(os.path.abspath(os.path.dirname(__file__)))
     try:
-        os.remove(appengine_rpc.HttpRpcServer.DEFAULT_COOKIE_FILE_PATH)
+        os.remove(appengine_rpc.HttpRpcServer.DEFAULT_COOKIE_FILE_PATH)#remove './.appcfg_cookies'
     except OSError:
         pass
-    for appid in appids.split('|'):
+    for appid in appids.split('|'):#以|为分隔同时部署多个appid
         upload('gae', appid)
     try:
-        os.remove(appengine_rpc.HttpRpcServer.DEFAULT_COOKIE_FILE_PATH)
+        os.remove(appengine_rpc.HttpRpcServer.DEFAULT_COOKIE_FILE_PATH)#remove './.appcfg_cookies'
     except OSError:
         pass
 
@@ -105,4 +105,4 @@ if __name__ == '__main__':
         '''.strip())
     main()
     println(os.linesep + u'上传成功，请不要忘记编辑proxy.ini把你的appid填进去，谢谢。按回车键退出程序。')
-    raw_input()
+    raw_input()#最后等待用户按下任意键结束

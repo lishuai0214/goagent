@@ -5,6 +5,8 @@ I will add chinese comments to this code
 
 有问题请联系lishuai0214@gmail.com
 
+版权归原作者所有
+
 goagent 3.2.3 [http://git.io/goa](https://nodeload.github.com/goagent/goagent/legacy.zip/3.0)
 
 ## Issues
